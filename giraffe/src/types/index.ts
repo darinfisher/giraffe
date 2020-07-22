@@ -1,4 +1,5 @@
 import CSS from 'csstype'
+import {TimeZone} from './timeZones'
 
 export type SizedConfig = Config & {width: number; height: number}
 export interface Config {
@@ -137,6 +138,7 @@ export enum LayerTypes {
   Band = 'band',
   Scatter = 'scatter',
   Mosaic = 'mosaic',
+  Table = 'table',
 }
 
 export type LayerConfig =
@@ -150,6 +152,7 @@ export type LayerConfig =
   | BandLayerConfig
   | ScatterLayerConfig
   | MosaicLayerConfig
+  | TableLayerConfig
 
 export interface CustomLayerConfig {
   type: 'custom' // do not refactor or restrict to LayerTypes.Custom
@@ -187,7 +190,7 @@ export interface GaugeLayerConfig {
   decimalPlaces: DecimalPlaces
   gaugeColors: Color[]
   gaugeSize?: number
-  theme?: GaugeTheme
+  gaugeTheme?: GaugeTheme
 }
 
 export interface GaugeTheme {
@@ -314,6 +317,16 @@ export interface ScatterLayerConfig {
   colors?: string[]
   symbol?: string[]
 }
+
+export interface TableLayerConfig {
+  type: 'table' // do not refactor or restrict to LayerTypes.Table
+  tables?: FluxTable[]
+  properties: TableViewProperties
+  timeZone: TimeZone
+  tableTheme: Theme
+  setFieldOptions: Function
+}
+
 export interface FluxTable {
   id: string
   name: string
@@ -369,7 +382,7 @@ export type Theme = 'light' | 'dark'
 
 export interface TableViewProperties {
   type: 'table'
-  queries: DashboardQuery[]
+  queries?: DashboardQuery[]
   colors: Color[]
   shape: 'chronograf-v2'
   note: string
@@ -461,6 +474,7 @@ export enum SpecTypes {
   Scatter = 'scatter',
   Rect = 'rect',
   Mosaic = 'mosaic',
+  Table = 'table',
 }
 
 export interface MosaicLayerSpec {
