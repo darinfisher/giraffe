@@ -1,4 +1,5 @@
 import CSS from 'csstype'
+import {CSSProperties, ReactNode} from 'react'
 import {TimeZone} from './timeZones'
 
 export type SizedConfig = Config & {width: number; height: number}
@@ -720,4 +721,12 @@ export interface BandIndexMap {
   rowIndices: number[]
   minIndices: number[]
   maxIndices: number[]
+}
+
+export interface StandardFunctionProps {
+  id?: string
+  style?: CSSProperties
+  testID?: string
+  children?: ReactNode
+  className?: string
 }
