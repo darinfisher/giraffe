@@ -1,4 +1,6 @@
 # Giraffe
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdarinfisher%2Fgiraffe.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdarinfisher%2Fgiraffe?ref=badge_shield)
+
 
 A React-based visualization library powering the data visualizations in the [InfluxDB 2.0](https://github.com/influxdata/influxdb/) UI.
 
@@ -214,3 +216,7 @@ When using the comma separated values (CSV) from the Flux query as the `fluxResp
 To contribute to Giraffe, see the [contributing guide](./CONTRIBUTING.md).
 
 Looking for details on the configuration? See the [configuration guide](./giraffe/README.md#config).
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdarinfisher%2Fgiraffe.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdarinfisher%2Fgiraffe?ref=badge_large)
